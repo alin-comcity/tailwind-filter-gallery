@@ -4,7 +4,7 @@ It helps to develope photo gallery, product gallery etc.
 
 # Used Tools:
 
-Tailwind 4.1 CDN.
+Tailwind 4.1 CDN, Alpine-Tailwind-Lightbox v1, Alpine JS v3.
 
 # Documentation:
 

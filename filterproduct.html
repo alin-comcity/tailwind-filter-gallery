@@ -1,144 +1,316 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="style.css">
     <title>Tailwind CSS Filterable Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    
     <!-- Navbar start here -->
-    <header class="text-gray-600 body-foclearnt py-4">
-        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-          <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
-            <a class="mr-5 text-gray-900 text-sm font-bold uppercase hover:text-[#ff5d1d]">Home</a>
-            <a class="mr-5 text-gray-900 text-sm font-bold uppercase hover:text-[#ff5d1d]">About</a>
+    <header class="text-gray-600 body-foclearnt">
+      <div
+        class="container mx-auto flex flex-wrap flex-col md:flex-row items-center"
+      >
+        <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
+          <a
+            class="mr-5 text-gray-900 text-sm font-bold uppercase hover:text-[#ff5d1d]"
+            >Home</a
+          >
+          <a
+            class="mr-5 text-gray-900 text-sm font-bold uppercase hover:text-[#ff5d1d]"
+            >About</a
+          >
+        </nav>
+        <a
+          href="#"
+          class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0"
+        >
+          <img src="/assets/images/logo.png" class="w-32 h-32" alt="logo" />
+        </a>
+        <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
+          <nav
+            class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto"
+          >
+            <a
+              class="mr-5 text-gray-900 text-sm font-bold uppercase hover:text-[#ff5d1d]"
+            ></a>
+            <a
+              class="mr-5 text-gray-900 text-sm font-bold uppercase hover:text-[#ff5d1d]"
+            ></a>
           </nav>
-          <a href="#" class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
-            <img src="/assets/images/logo.png" alt="logo">
-          </a>
-          <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
-            <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
-                <a class="mr-5 text-gray-900 text-sm font-bold uppercase hover:text-[#ff5d1d]"></a>
-                <a class="mr-5 text-gray-900 text-sm font-bold uppercase hover:text-[#ff5d1d]"></a>
-              </nav>
-          </div>
         </div>
+      </div>
     </header>
-    <!-- Navbar end here -->    
-         
-         <!-- Bestseller Product Start Here -->
-        <section id="portfolio" class="portfolio-section py-16 px-4">
-            <div class="container mx-auto">
-                <!-- title and sub title start here -->
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl font-bold mb-4">Portfolio Showcase</h2>
-                    <p class="text-lg font-semibold">Discover our latest projects and success stories</p>
-                </div>
-                <!-- title and sub title end here -->
+    <!-- Navbar end here -->
 
-                <!-- filter buttons start here -->
-                <div class="text-center py-8">
-                    <!-- <button type="button" class="filter-button text-white bg-black hover:bg-[#ff5d1d] focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 uppercase">All</button> -->
-                    <button type="button" class="filter-button text-white bg-black hover:bg-[#ff5d1d] focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 uppercase">Web Design</button>
-                    <button type="button" class="filter-button text-white bg-black hover:bg-[#ff5d1d] focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 uppercase">App Development</button>
-                    <button type="button" class="filter-button text-white bg-black hover:bg-[#ff5d1d] focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 uppercase">Branding</button>
-                </div>
-                <!-- filter buttons end here -->
+    <div class="container mx-auto py-16 px-4">
+      <!-- title and sub title start here -->
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-4">Portfolio Showcase</h2>
+        <p class="text-lg text-gray-500">Tailwind CSS Filterable Gallery</p>
+      </div>
+      <!-- title and sub title end here -->
 
-                <!-- filter items start here -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                    <div class="group portfolio-item relative hover:shadow-lg shadow-md rounded-lg overflow-hidden">
-                        <a href="/project-1">
-                            <img class="w-full h-60 object-cover" src="/assets/images/p1.jpg" alt="Project 1">
-                            <div
-                                class="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-r from-indigo-500 to-pink-500 opacity-0 transition duration-300 ease-in-out group-hover:opacity-70">
-                            </div>
-                            <div class="p-4 flex flex-col items-center justify-between relative z-10">
-                                <h3 class="text-lg font-medium text-txt group-hover:text-gray-dark">Awesome Project 1</h3>
-                                <span class="text-sm font-bold text-pink-500 group-hover:text-indigo-500">App development</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="group portfolio-item relative hover:shadow-lg shadow-md rounded-lg overflow-hidden">
-                        <a href="/project-2">
-                            <img class="w-full h-60 object-cover" src="/assets/images/p2.jpg" alt="Project 1">
-                            <div
-                                class="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-r from-indigo-500 to-pink-500 opacity-0 transition duration-300 ease-in-out group-hover:opacity-70">
-                            </div>
-                            <div class="p-4 flex flex-col items-center justify-between relative z-10">
-                                <h3 class="text-lg font-medium text-txt group-hover:text-gray-dark">Awesome Project 2</h3>
-                                <span class="text-sm font-bold text-pink-500 group-hover:text-indigo-500">App development</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="group portfolio-item relative hover:shadow-lg shadow-md rounded-lg overflow-hidden">
-                        <a href="/project-3">
-                            <img class="w-full h-60 object-cover" src="/assets/images/3.jpg" alt="Project 1">
-                            <div
-                                class="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-r from-indigo-500 to-pink-500 opacity-0 transition duration-300 ease-in-out group-hover:opacity-70">
-                            </div>
-                            <div class="p-4 flex flex-col items-center justify-between relative z-10">
-                                <h3 class="text-lg font-medium text-txt group-hover:text-gray-dark">Awesome Project 3</h3>
-                                <span class="text-sm font-bold text-pink-500 group-hover:text-indigo-500">Web Design</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="group portfolio-item relative hover:shadow-lg shadow-md rounded-lg overflow-hidden">
-                        <a href="/project-4">
-                            <img class="w-full h-60 object-cover" src="/assets/images/p4.jpg" alt="Project 1">
-                            <div
-                                class="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-r from-indigo-500 to-pink-500 opacity-0 transition duration-300 ease-in-out group-hover:opacity-70">
-                            </div>
-                            <div class="p-4 flex flex-col items-center justify-between relative z-10">
-                                <h3 class="text-lg font-medium text-txt group-hover:text-gray-dark">Awesome Project 4</h3>
-                                <span class="text-sm font-bold text-pink-500 group-hover:text-indigo-500">Web Design</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="group portfolio-item relative hover:shadow-lg shadow-md rounded-lg overflow-hidden">
-                        <a href="/project-5">
-                            <img class="w-full h-60 object-cover" src="/assets/images/p5.jpg" alt="Project 1">
-                            <div
-                                class="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-r from-indigo-500 to-pink-500 opacity-0 transition duration-300 ease-in-out group-hover:opacity-70">
-                            </div>
-                            <div class="p-4 flex flex-col items-center justify-between relative z-10">
-                                <h3 class="text-lg font-medium text-txt group-hover:text-gray-dark">Awesome Project 5</h3>
-                                <span class="span text-sm font-bold text-pink-500 group-hover:text-indigo-500">Branding</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="group portfolio-item relative hover:shadow-lg shadow-md rounded-lg overflow-hidden">
-                        <a href="/project-6">
-                            <img class="w-full h-60 object-cover" src="/assets/images/p6.jpg" alt="Project 1">
-                            <div
-                                class="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-r from-indigo-500 to-pink-500 opacity-0 transition duration-300 ease-in-out group-hover:opacity-70">
-                            </div>
-                            <div class="p-4 flex flex-col items-center justify-between relative z-10">
-                                <h3 class="text-lg font-medium text-txt group-hover:text-gray-dark">Awesome Project 6</h3>
-                                <span class="text-sm font-bold text-pink-500 group-hover:text-indigo-500">Branding</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <!-- filter items end here -->
-            </div>
-        </section>
-         <!-- Top Popular Product End Here -->
+      <!-- filter buttons start here -->
+      <div class="mb-6 flex flex-wrap justify-center gap-4">
+        <button
+          class="filter-btn text-white bg-black hover:bg-[#ff5d1d] focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 uppercase"
+          data-filter="all"
+        >
+          All
+        </button>
+        <button
+          class="filter-btn text-white bg-black hover:bg-[#ff5d1d] focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 uppercase"
+          data-filter="web-design"
+        >
+          Web Design
+        </button>
+        <button
+          class="filter-btn text-white bg-black hover:bg-[#ff5d1d] focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 uppercase"
+          data-filter="app-development"
+        >
+          App Development
+        </button>
+        <button
+          class="filter-btn text-white bg-black hover:bg-[#ff5d1d] focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 uppercase"
+          data-filter="branding"
+        >
+          Branding
+        </button>
+      </div>
+      <!-- filter buttons end here -->
 
-        <!-- Footer Start Here -->
-        <footer class="text-gray-600 body-font">
-            <div class="bg-gray-100">
-              <div class="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
-                <p class="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">Copyright © by Alin 2025.</p>
-                <p class="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">Developed by Alin.</p>
-              </div>
-            </div>
-        </footer>
-        <!-- Footer End Here -->
-     
-     <script src="/filterproduct.js"></script>
+      <!-- filter items start here -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div
+          class="gallery-item web-design group relative hover:shadow-lg shadow-md rounded-lg overflow-hidden"
+        >
+          <a
+            href="#"
+            class="w-full h-60 object-cover aspect-square flex rounded-md overflow-hidden hover:opacity-80 transition-opacity"
+            x-data="{ url: './assets/images/gallery_items/web-design1.jpg', thumb: './assets/images/gallery_items/web-design1.jpg' }"
+            x-lightbox="url"
+          >
+            <img
+              class="flex-1 object-cover object-center"
+              :src="thumb"
+              alt=""
+            />
+          </a>
+        </div>
+        <div
+          class="gallery-item web-design group relative hover:shadow-lg shadow-md rounded-lg overflow-hidden"
+        >
+          <a
+            href="#"
+            class="w-full h-60 object-cover aspect-square flex rounded-md overflow-hidden hover:opacity-80 transition-opacity"
+            x-data="{ url: './assets/images/gallery_items/web-design2.jpg', thumb: './assets/images/gallery_items/web-design2.jpg' }"
+            x-lightbox="url"
+          >
+            <img
+              class="flex-1 object-cover object-center"
+              :src="thumb"
+              alt=""
+            />
+          </a>
+        </div>
+        <div
+          class="gallery-item web-design group relative hover:shadow-lg shadow-md rounded-lg overflow-hidden"
+        >
+          <a
+            href="#"
+            class="w-full h-60 object-cover aspect-square flex rounded-md overflow-hidden hover:opacity-80 transition-opacity"
+            x-data="{ url: './assets/images/gallery_items/web-design3.jpg', thumb: './assets/images/gallery_items/web-design3.jpg' }"
+            x-lightbox="url"
+          >
+            <img
+              class="flex-1 object-cover object-center"
+              :src="thumb"
+              alt=""
+            />
+          </a>
+        </div>
+        <div
+          class="gallery-item web-design group relative hover:shadow-lg shadow-md rounded-lg overflow-hidden"
+        >
+          <a
+            href="#"
+            class="w-full h-60 object-cover aspect-square flex rounded-md overflow-hidden hover:opacity-80 transition-opacity"
+            x-data="{ url: './assets/images/gallery_items/web-design4.jpg', thumb: './assets/images/gallery_items/web-design4.jpg' }"
+            x-lightbox="url"
+          >
+            <img
+              class="flex-1 object-cover object-center"
+              :src="thumb"
+              alt=""
+            />
+          </a>
+        </div>
+
+        <div
+          class="gallery-item app-development group relative hover:shadow-lg shadow-md rounded-lg overflow-hidden"
+        >
+          <a
+            href="#"
+            class="w-full h-60 object-cover aspect-square flex rounded-md overflow-hidden hover:opacity-80 transition-opacity"
+            x-data="{ url: './assets/images/gallery_items/app-development1.jpg', thumb: './assets/images/gallery_items/app-development1.jpg' }"
+            x-lightbox="url"
+          >
+            <img
+              class="flex-1 object-cover object-center"
+              :src="thumb"
+              alt=""
+            />
+          </a>
+        </div>
+        <div
+          class="gallery-item app-development group relative hover:shadow-lg shadow-md rounded-lg overflow-hidden"
+        >
+          <a
+            href="#"
+            class="w-full h-60 object-cover aspect-square flex rounded-md overflow-hidden hover:opacity-80 transition-opacity"
+            x-data="{ url: './assets/images/gallery_items/app-development2.jpg', thumb: './assets/images/gallery_items/app-development2.jpg' }"
+            x-lightbox="url"
+          >
+            <img
+              class="flex-1 object-cover object-center"
+              :src="thumb"
+              alt=""
+            />
+          </a>
+        </div>
+        <div
+          class="gallery-item app-development group relative hover:shadow-lg shadow-md rounded-lg overflow-hidden"
+        >
+          <a
+            href="#"
+            class="w-full h-60 object-cover aspect-square flex rounded-md overflow-hidden hover:opacity-80 transition-opacity"
+            x-data="{ url: './assets/images/gallery_items/app-development3.jpg', thumb: './assets/images/gallery_items/app-development3.jpg' }"
+            x-lightbox="url"
+          >
+            <img
+              class="flex-1 object-cover object-center"
+              :src="thumb"
+              alt=""
+            />
+          </a>
+        </div>
+        <div
+          class="gallery-item app-development group relative hover:shadow-lg shadow-md rounded-lg overflow-hidden"
+        >
+          <a
+            href="#"
+            class="w-full h-60 object-cover aspect-square flex rounded-md overflow-hidden hover:opacity-80 transition-opacity"
+            x-data="{ url: './assets/images/gallery_items/app-development3.jpg', thumb: './assets/images/gallery_items/app-development3.jpg' }"
+            x-lightbox="url"
+          >
+            <img
+              class="flex-1 object-cover object-center"
+              :src="thumb"
+              alt=""
+            />
+          </a>
+        </div>
+        <div
+          class="gallery-item app-development group relative hover:shadow-lg shadow-md rounded-lg overflow-hidden"
+        >
+          <a
+            href="#"
+            class="w-full h-60 object-cover aspect-square flex rounded-md overflow-hidden hover:opacity-80 transition-opacity"
+            x-data="{ url: './assets/images/gallery_items/app-development4.jpg', thumb: './assets/images/gallery_items/app-development4.jpg' }"
+            x-lightbox="url"
+          >
+            <img
+              class="flex-1 object-cover object-center"
+              :src="thumb"
+              alt=""
+            />
+          </a>
+        </div>
+
+        <div
+          class="gallery-item branding group relative hover:shadow-lg shadow-md rounded-lg overflow-hidden"
+        >
+          <a
+            href="#"
+            class="w-full h-60 object-cover aspect-square flex rounded-md overflow-hidden hover:opacity-80 transition-opacity"
+            x-data="{ url: './assets/images/gallery_items/branding1.jpg', thumb: './assets/images/gallery_items/branding1.jpg' }"
+            x-lightbox="url"
+          >
+            <img
+              class="flex-1 object-cover object-center"
+              :src="thumb"
+              alt=""
+            />
+          </a>
+        </div>
+        <div
+          class="gallery-item branding group relative hover:shadow-lg shadow-md rounded-lg overflow-hidden"
+        >
+          <a
+            href="#"
+            class="w-full h-60 object-cover aspect-square flex rounded-md overflow-hidden hover:opacity-80 transition-opacity"
+            x-data="{ url: './assets/images/gallery_items/branding2.jpg', thumb: './assets/images/gallery_items/branding2.jpg' }"
+            x-lightbox="url"
+          >
+            <img
+              class="flex-1 object-cover object-center"
+              :src="thumb"
+              alt=""
+            />
+          </a>
+        </div>
+        <div
+          class="gallery-item branding group relative hover:shadow-lg shadow-md rounded-lg overflow-hidden"
+        >
+          <a
+            href="#"
+            class="w-full h-60 object-cover aspect-square flex rounded-md overflow-hidden hover:opacity-80 transition-opacity"
+            x-data="{ url: './assets/images/gallery_items/branding3.jpg', thumb: './assets/images/gallery_items/branding3.jpg' }"
+            x-lightbox="url"
+          >
+            <img
+              class="flex-1 object-cover object-center"
+              :src="thumb"
+              alt=""
+            />
+          </a>
+        </div>
+      </div>
+      <!-- filter items start here -->
+    </div>
+
+    <!-- Footer Start Here -->
+    <footer class="text-gray-600 body-font">
+      <div class="bg-gray-100">
+        <div
+          class="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col"
+        >
+          <p class="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">
+            Copyright © by Alin 2025.
+          </p>
+          <p class="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">
+            Developed by Alin.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer End Here -->
+
+    <!-- Lightbox Plugin -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpine-tailwind-lightbox@1.x.x/dist/alpine-tailwind-lightbox.min.js"
+    ></script>
+
+    <!-- AlpineJS Core -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <script src="/filterproduct.js"></script>
   </body>
 </html>

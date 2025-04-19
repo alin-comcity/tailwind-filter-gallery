@@ -1,37 +1,29 @@
-document.addEventListener('DOMContentLoaded', function() { 
-  // before click on any category 
-  const portfolioItems = document.querySelectorAll('.portfolio-item');
+document.addEventListener('DOMContentLoaded', function() {
   
-  portfolioItems.forEach(item => {
-    const span = item.querySelector('span').textContent.toLowerCase();
-    if(span == 'web design') {
-      item.classList.remove('hidden');   
-    }else {
-      item.classList.add('hidden');   
-    }
-  });
+  const filterButtons = document.querySelectorAll(".filter-btn");
+      const galleryItems = document.querySelectorAll(".gallery-item");
 
+      filterButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const filter = btn.getAttribute("data-filter");
 
-  // get the filter buttons properties
-  const filterButtons = document.querySelectorAll('.filter-button');
+          // Update button styles
+          filterButtons.forEach((b) => {
+            b.classList.remove("bg-[#ff5d1d]");
+            b.classList.add("bg-black");
+          });
+          btn.classList.add("bg-[#ff5d1d]");
+          btn.classList.remove("bg-black");
 
-  // when click any single filter button
-  filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      // get and store the clicked filter button properties
-      const filterValue = button.textContent.toLowerCase();
-      
-      const portfolioItems = document.querySelectorAll('.portfolio-item');
-      
-      portfolioItems.forEach(item => {
-        const itemCategories = item.querySelector('span').textContent.toLowerCase();
-  
-        if (filterValue === 'all' || itemCategories.includes(filterValue)) {
-          item.classList.remove('hidden');
-        } else {
-          item.classList.add('hidden');
-        }
+          // Filter items
+          galleryItems.forEach((item) => {
+            if (filter === "all" || item.classList.contains(filter)) {
+              item.classList.remove("hidden");
+            } else {
+              item.classList.add("hidden");
+            }
+          });
+        });
       });
-    });
-  });
+
 });

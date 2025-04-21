@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- test start here -->
+    <div x-data="app">
+      <template x-if="true" x-init="readCats()">
+        <div>
+          <template x-for="catOb in cats">
+            <tr>
+              <td x-text="catOb.name"></td>
+              <td x-text="catOb.age"></td>
+              <td x-text="catOb.gender"></td>
+            </tr>
+          </template>
+        </div>
+      </template>
+    </div>
+    <!-- test end here -->
+
+    <!-- AlpineJS Core -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <script src="test.js"></script>
+  </body>
+</html>

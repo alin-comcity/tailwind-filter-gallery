@@ -54,81 +54,36 @@
       <!-- title and sub title end here -->
 
       <!-- filter buttons start here -->
-      <div x-data="app" class="mb-6 flex flex-wrap justify-center gap-4">
-        <template x-if="true" x-init="readData()">
-          <div>
-            <template x-for="category in categories">
-              <button
-                x-text="category.name"
-                class="filter-btn text-white bg-black hover:bg-[#ff5d1d] focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 uppercase"
-                data-filter="category.name"
-              ></button>
-            </template>
-          </div>
-        </template>
-      </div>
-      <!-- filter buttons end here -->
-
-      <!-- filter items start here -->
-      <div
-        x-data="app"
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
-      >
-        <template x-if="true" x-init="readData()">
-          <template x-for="galleryItem in galleryItems">
-            <div
-              :class="galleryItem.name"
-              class="gallery-item group relative hover:shadow-lg shadow-md overflow-hidden"
-            >
-              <a
-                href="#"
-                class="w-full h-60 object-cover aspect-square flex rounded-sm overflow-hidden hover:opacity-80 transition-opacity"
-                x-data="{ url: galleryItem.url, thumb: galleryItem.thumb }"
-                x-lightbox="url"
-              >
-                <img
-                  class="flex-1 object-cover object-center"
-                  :src="thumb"
-                  alt=""
-                />
-              </a>
-            </div>
-          </template>
-        </template>
-      </div>
-      <!-- filter items start here -->
-
-      <!-- filter buttons start here -->
-      <!-- <div class="mb-6 flex flex-wrap justify-center gap-4">
+      <div class="mb-6 flex flex-wrap justify-center gap-4">
         <button
-          class="transition duration-200 ease-in-out filter-btn text-white bg-black hover:bg-[#ff5d1d] focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 uppercase"
+          class="filter-btn text-white bg-black hover:bg-[#ff5d1d] focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 uppercase"
           data-filter="all"
         >
           All
         </button>
         <button
-          class="transition duration-200 ease-in-out filter-btn text-white bg-black hover:bg-[#ff5d1d] focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 uppercase"
+          class="filter-btn text-white bg-black hover:bg-[#ff5d1d] focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 uppercase"
           data-filter="web-design"
         >
           Web Design
         </button>
         <button
-          class="transition duration-200 ease-in-out filter-btn text-white bg-black hover:bg-[#ff5d1d] focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 uppercase"
+          class="filter-btn text-white bg-black hover:bg-[#ff5d1d] focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 uppercase"
           data-filter="app-development"
         >
           App Development
         </button>
         <button
-          class="transition duration-200 ease-in-out filter-btn text-white bg-black hover:bg-[#ff5d1d] focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 uppercase"
+          class="filter-btn text-white bg-black hover:bg-[#ff5d1d] focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 uppercase"
           data-filter="branding"
         >
           Branding
         </button>
-      </div> -->
+      </div>
       <!-- filter buttons end here -->
 
       <!-- filter items start here -->
-      <!-- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         <div
           class="gallery-item web-design group relative hover:shadow-lg shadow-md overflow-hidden"
         >
@@ -323,7 +278,7 @@
             />
           </a>
         </div>
-      </div> -->
+      </div>
       <!-- filter items start here -->
     </div>
 
@@ -356,6 +311,6 @@
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
 
-    <script src="/filterproduct.js"></script>
+    <script src="/script.js"></script>
   </body>
 </html>

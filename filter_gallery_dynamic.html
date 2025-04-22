@@ -81,6 +81,9 @@
       >
         <template x-for="galleryItem in galleryItems">
           <div
+            x-show="open"
+            x-transition:enter.duration.500ms
+            x-transition:leave.duration.1000ms
             :class="galleryItem.name"
             class="gallery-item group relative hover:shadow-lg shadow-md overflow-hidden"
           >

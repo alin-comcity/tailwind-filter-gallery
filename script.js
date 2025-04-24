@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   
-  const filterButtons = document.querySelectorAll(".filter-btn");
-      const galleryItems = document.querySelectorAll(".gallery-item");
+  const filterButtons = document.querySelectorAll(".filter-btn");  
 
       filterButtons.forEach((btn) => {
         btn.addEventListener("click", () => {
@@ -9,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
           
           const filter = btn.getAttribute("data-filter");
           console.log(filter)
+
+          const galleryItems = document.querySelectorAll(".gallery-item");
 
           // Update button styles
           filterButtons.forEach((b) => {
@@ -33,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 document.addEventListener('alpine:init', () => {
-  Alpine.data('app', () => ({
+  Alpine.data('app', () => ({    
     categories: [],    
     galleryItems: [],
       async readData() {
